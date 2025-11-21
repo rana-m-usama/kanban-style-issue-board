@@ -2,6 +2,10 @@
 
 A React + TypeScript kanban board application for managing issues with drag-and-drop functionality, priority sorting, and role-based access control.
 
+## 🚀 Live Demo
+
+[View Live Application](https://transcendent-madeleine-ead360.netlify.app)
+
 ## Features
 
 - **Drag & Drop**: Move issues between Backlog, In Progress, and Done columns
