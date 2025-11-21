@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  color: $text-primary;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $bg-secondary;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  svg {
+    display: block;
+  }
+}

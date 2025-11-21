@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { currentUser } from '../../constants/currentUser';
+import { ThemeToggle } from '../common/ThemeToggle';
 import styles from './Navigation.module.scss';
 
 export const Navigation: React.FC = () => {
@@ -11,6 +12,9 @@ export const Navigation: React.FC = () => {
           Kanban Issue Board
         </Link>
         
+        <div className={styles.nav__actions}>
+          <ThemeToggle />
+        </div>
         
         <div className={styles.nav__user}>
           <span className={styles.nav__username}>{currentUser.name}</span>

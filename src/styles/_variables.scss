@@ -6,29 +6,75 @@ $danger-color: #dc3545;
 $warning-color: #ffc107;
 $info-color: #17a2b8;
 
-// Text colors
-$text-primary: #212529;
-$text-secondary: #495057;
-$text-muted: #6c757d;
-$text-light: #ffffff;
+// Light theme colors
+:root {
+  // Text colors
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --text-light: #ffffff;
 
-// Background colors
-$bg-primary: #ffffff;
-$bg-secondary: #f8f9fa;
-$bg-tertiary: #e9ecef;
-$column-bg: #f8f9fa;
-$card-bg: #ffffff;
+  // Background colors
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --column-bg: #f8f9fa;
+  --card-bg: #ffffff;
 
-// Border
-$border-color: rgba(0, 0, 0, 0.08);
+  // Border
+  --border-color: rgba(0, 0, 0, 0.08);
+  
+  // Shadows
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --box-shadow-active: 0 6px 12px rgba(0, 0, 0, 0.16);
+}
+
+// Dark theme colors
+[data-theme='dark'] {
+  // Text colors
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --text-muted: #868e96;
+  --text-light: #ffffff;
+
+  // Background colors
+  --bg-primary: #1a1d23;
+  --bg-secondary: #22262e;
+  --bg-tertiary: #2a2f38;
+  --column-bg: #22262e;
+  --card-bg: #2a2f38;
+
+  // Border
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  // Shadows
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --box-shadow-active: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+// SCSS variables for backward compatibility
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
+$text-light: var(--text-light);
+
+$bg-primary: var(--bg-primary);
+$bg-secondary: var(--bg-secondary);
+$bg-tertiary: var(--bg-tertiary);
+$column-bg: var(--column-bg);
+$card-bg: var(--card-bg);
+
+$border-color: var(--border-color);
 $border-radius: 6px;
 $border-radius-sm: 4px;
 $border-radius-lg: 8px;
 
 // Shadows
-$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-$box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.12);
-$box-shadow-active: 0 6px 12px rgba(0, 0, 0, 0.16);
+$box-shadow: var(--box-shadow);
+$box-shadow-hover: var(--box-shadow-hover);
+$box-shadow-active: var(--box-shadow-active);
 
 // Spacing
 $spacing-xs: 0.25rem;
