@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ISS-001",
+    "title": "Implement user authentication",
+    "description": "Add JWT-based authentication with login and registration",
+    "status": "inProgress",
+    "tags": ["authentication", "security"],
+    "assignee": "Alice",
+    "severity": 5,
+    "userDefinedRank": 1,
+    "createdAt": "2025-11-15T10:00:00Z",
+    "updatedAt": "2025-11-20T14:30:00Z"
+  },
+  {
+    "id": "ISS-002",
+    "title": "Fix responsive layout issues",
+    "description": "Mobile layout breaks on screens below 768px",
+    "status": "backlog",
+    "tags": ["bug", "ui", "responsive"],
+    "assignee": "Bob",
+    "severity": 3,
+    "userDefinedRank": 2,
+    "createdAt": "2025-11-18T09:15:00Z",
+    "updatedAt": "2025-11-18T09:15:00Z"
+  },
+  {
+    "id": "ISS-003",
+    "title": "Add dark mode support",
+    "description": "Implement dark mode theme toggle",
+    "status": "backlog",
+    "tags": ["feature", "ui"],
+    "assignee": "Charlie",
+    "severity": 2,
+    "userDefinedRank": 5,
+    "createdAt": "2025-11-10T11:20:00Z",
+    "updatedAt": "2025-11-10T11:20:00Z"
+  },
+  {
+    "id": "ISS-004",
+    "title": "Optimize database queries",
+    "description": "Slow queries causing performance issues",
+    "status": "inProgress",
+    "tags": ["performance", "backend"],
+    "assignee": "Alice",
+    "severity": 4,
+    "userDefinedRank": 1,
+    "createdAt": "2025-11-16T13:45:00Z",
+    "updatedAt": "2025-11-19T16:20:00Z"
+  },
+  {
+    "id": "ISS-005",
+    "title": "Write API documentation",
+    "description": "Document all API endpoints with examples",
+    "status": "done",
+    "tags": ["documentation"],
+    "assignee": "Bob",
+    "severity": 2,
+    "userDefinedRank": 3,
+    "createdAt": "2025-11-05T08:30:00Z",
+    "updatedAt": "2025-11-17T10:00:00Z"
+  },
+  {
+    "id": "ISS-006",
+    "title": "Implement file upload feature",
+    "description": "Allow users to upload images and documents",
+    "status": "backlog",
+    "tags": ["feature", "storage"],
+    "assignee": "Charlie",
+    "severity": 3,
+    "userDefinedRank": 4,
+    "createdAt": "2025-11-12T14:00:00Z",
+    "updatedAt": "2025-11-12T14:00:00Z"
+  },
+  {
+    "id": "ISS-007",
+    "title": "Fix memory leak in dashboard",
+    "description": "Dashboard component causing memory leak",
+    "status": "inProgress",
+    "tags": ["bug", "performance"],
+    "assignee": "Alice",
+    "severity": 5,
+    "userDefinedRank": 1,
+    "createdAt": "2025-11-19T09:00:00Z",
+    "updatedAt": "2025-11-21T08:30:00Z"
+  },
+  {
+    "id": "ISS-008",
+    "title": "Add email notifications",
+    "description": "Send email notifications for important events",
+    "status": "backlog",
+    "tags": ["feature", "notifications"],
+    "assignee": "Bob",
+    "severity": 2,
+    "userDefinedRank": 6,
+    "createdAt": "2025-11-08T10:30:00Z",
+    "updatedAt": "2025-11-08T10:30:00Z"
+  },
+  {
+    "id": "ISS-009",
+    "title": "Update dependencies",
+    "description": "Update all npm packages to latest versions",
+    "status": "done",
+    "tags": ["maintenance"],
+    "assignee": "Charlie",
+    "severity": 1,
+    "userDefinedRank": 7,
+    "createdAt": "2025-11-01T12:00:00Z",
+    "updatedAt": "2025-11-14T15:00:00Z"
+  },
+  {
+    "id": "ISS-010",
+    "title": "Create user profile page",
+    "description": "Design and implement user profile functionality",
+    "status": "backlog",
+    "tags": ["feature", "ui"],
+    "assignee": "Alice",
+    "severity": 3,
+    "userDefinedRank": 3,
+    "createdAt": "2025-11-14T16:30:00Z",
+    "updatedAt": "2025-11-14T16:30:00Z"
+  }
+]

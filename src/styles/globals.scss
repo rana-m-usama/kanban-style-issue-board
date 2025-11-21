@@ -1,0 +1,13 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+
+// Global styles
+body {
+  background-color: $bg-secondary;
+  color: $text-primary;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,108 @@
+@import './variables';
+
+// Card mixin
+@mixin card {
+  background: $card-bg;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-md;
+  border: 1px solid $border-color;
+}
+
+// Button variant mixin
+@mixin button-variant($bg-color, $text-color: $text-light) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background-color: darken($bg-color, 10%);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: darken($bg-color, 15%);
+    transform: translateY(1px);
+  }
+}
+
+// Responsive breakpoint mixin
+@mixin responsive($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: $breakpoint-mobile) { @content; }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-width: $breakpoint-tablet) { @content; }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: $breakpoint-desktop) { @content; }
+  } @else if $breakpoint == 'wide' {
+    @media (min-width: $breakpoint-wide) { @content; }
+  }
+}
+
+// Flexbox helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// Text truncate
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Reset button styles
+@mixin reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+// Smooth transitions
+@mixin smooth-transition($property: all) {
+  transition: $property $transition-base;
+}
+
+// Focus outline
+@mixin focus-outline {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Scrollbar styling
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-secondary;
+    border-radius: $border-radius-sm;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $secondary-color;
+    border-radius: $border-radius-sm;
+    
+    &:hover {
+      background: darken($secondary-color, 10%);
+    }
+  }
+}

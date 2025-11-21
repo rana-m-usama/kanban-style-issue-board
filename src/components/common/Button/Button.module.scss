@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.button {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: $transition-base;
+  border: none;
+  outline: none;
+  
+  &:focus-visible {
+    @include focus-outline;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &--primary {
+    @include button-variant($primary-color);
+  }
+  
+  &--secondary {
+    @include button-variant($secondary-color);
+  }
+  
+  &--danger {
+    @include button-variant($danger-color);
+  }
+  
+  &--ghost {
+    background: transparent;
+    color: $text-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $bg-secondary;
+    }
+  }
+  
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+  
+  &--medium {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+  }
+  
+  &--large {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-lg;
+  }
+}

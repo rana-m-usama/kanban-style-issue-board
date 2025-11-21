@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.board {
+  &__header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+  }
+  
+  &__sync {
+    font-size: $font-size-sm;
+    color: $text-muted;
+  }
+  
+  &__filters {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &__search {
+    // Add any specific search input styles if needed
+  }
+  
+  &__notice {
+    background-color: lighten($warning-color, 35%);
+    color: darken($warning-color, 20%);
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    font-weight: $font-weight-medium;
+  }
+  
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

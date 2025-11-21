@@ -1,0 +1,124 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.boardPage {
+  display: flex;
+  gap: $spacing-xl;
+  
+  @media (max-width: $breakpoint-desktop) {
+    flex-direction: column;
+  }
+  
+  .main {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .sidebar {
+    width: 300px;
+    background: $card-bg;
+    border-radius: $border-radius;
+    padding: $spacing-md;
+    box-shadow: $box-shadow;
+    height: fit-content;
+    position: sticky;
+    top: $spacing-lg;
+    
+    @media (max-width: $breakpoint-desktop) {
+      width: 100%;
+      position: static;
+    }
+    
+    &__header {
+      @include flex-between;
+      margin-bottom: $spacing-md;
+      padding-bottom: $spacing-sm;
+      border-bottom: 1px solid $border-color;
+    }
+    
+    &__title {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $text-primary;
+    }
+    
+    &__clear {
+      @include reset-button;
+      font-size: $font-size-sm;
+      color: $danger-color;
+      padding: $spacing-xs $spacing-sm;
+      border: 1px solid $danger-color;
+      border-radius: $border-radius-sm;
+      transition: $transition-base;
+      
+      &:hover {
+        background-color: $danger-color;
+        color: white;
+      }
+    }
+    
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+    
+    &__item {
+      // List item styles
+    }
+    
+    &__link {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+      padding: $spacing-sm;
+      border-radius: $border-radius-sm;
+      transition: $transition-base;
+      text-decoration: none;
+      border: 1px solid transparent;
+      
+      &:hover {
+        background-color: $bg-secondary;
+        border-color: $border-color;
+      }
+    }
+    
+    &__header {
+      @include flex-between;
+      align-items: center;
+      margin-bottom: $spacing-xs;
+    }
+    
+    &__issueId {
+      font-size: $font-size-xs;
+      font-family: monospace;
+      color: $text-muted;
+      font-weight: $font-weight-semibold;
+    }
+    
+    &__badges {
+      display: flex;
+      gap: $spacing-xs;
+    }
+    
+    &__issueTitle {
+      font-size: $font-size-sm;
+      color: $text-primary;
+      font-weight: $font-weight-medium;
+      @include text-truncate;
+      margin-bottom: $spacing-xs;
+    }
+    
+    &__meta {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      font-size: $font-size-xs;
+    }
+    
+    &__assignee {
+      color: $text-muted;
+      font-size: $font-size-xs;
+    }
+  }
+}
