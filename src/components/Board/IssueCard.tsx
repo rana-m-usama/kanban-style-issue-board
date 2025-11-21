@@ -35,7 +35,7 @@ export const IssueCard: React.FC<IssueCardProps> = ({ issue, canDrag }) => {
     transition,
   };
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = () => {
     if (!isDragging) {
       navigate(`/issue/${issue.id}`);
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useToastStore } from '../../../store/toastStore';
-import { Button } from '../Button';
 import styles from './Toast.module.scss';
 
 export const Toast: React.FC = () => {

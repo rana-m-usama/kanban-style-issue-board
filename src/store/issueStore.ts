@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import type { Issue, FilterOptions } from '../types';
-import { IssueStatus } from '../types';
 import { api } from '../utils/api';
 import { sortIssuesByPriority } from '../utils/priorityCalculator';
 

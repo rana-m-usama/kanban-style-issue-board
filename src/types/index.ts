@@ -1,13 +1,17 @@
-export enum IssueStatus {
-  BACKLOG = 'backlog',
-  IN_PROGRESS = 'inProgress',
-  DONE = 'done'
-}
+export const IssueStatus = {
+  BACKLOG: 'backlog',
+  IN_PROGRESS: 'inProgress',
+  DONE: 'done'
+} as const;
 
-export enum UserRole {
-  ADMIN = 'admin',
-  CONTRIBUTOR = 'contributor'
-}
+export type IssueStatus = typeof IssueStatus[keyof typeof IssueStatus];
+
+export const UserRole = {
+  ADMIN: 'admin',
+  CONTRIBUTOR: 'contributor'
+} as const;
+
+export type UserRole = typeof UserRole[keyof typeof UserRole];
 
 export interface Issue {
   id: string;

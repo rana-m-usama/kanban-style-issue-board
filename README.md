@@ -6,7 +6,6 @@ A React + TypeScript kanban board application for managing issues with drag-and-
 
 - **Drag & Drop**: Move issues between Backlog, In Progress, and Done columns
 - **Optimistic Updates**: Instant UI feedback with undo capability (5-second window)
-- **Smart Sorting**: Issues automatically sorted by priority score (severity × 10 + days since creation × -1 + user rank)
 - **Search & Filter**: Real-time search by title/tags, filter by assignee and severity
 - **Recently Accessed**: Sidebar tracking last 5 visited issues (stored in localStorage)
 - **Role-Based Permissions**: Admin users can modify issues, contributors have read-only access
@@ -63,6 +62,52 @@ A React + TypeScript kanban board application for managing issues with drag-and-
 - `pnpm test:ui` - Run tests with UI
 - `pnpm test:coverage` - Run tests with coverage report
 
+## Production Build
+
+### Building for Production
+
+To create an optimized production build:
+
+```bash
+pnpm build
+```
+
+This command:
+- Compiles TypeScript to JavaScript
+- Bundles and minifies all assets
+- Optimizes CSS and removes unused styles
+- Generates source maps for debugging
+- Creates a `dist/` directory with production-ready files
+
+### Build Output
+
+The production build generates:
+- `dist/index.html` - Main HTML file
+- `dist/assets/` - Bundled and hashed JS/CSS files
+- Optimized for performance with code splitting and tree shaking
+
+### Preview Production Build Locally
+
+To test the production build on your local machine:
+
+```bash
+pnpm preview
+```
+
+This starts a local server serving the production build at `http://localhost:4173`
+
+### Deployment
+
+The `dist/` directory can be deployed to any static hosting service:
+
+- **Vercel**: `vercel deploy`
+- **Netlify**: Drag and drop the `dist/` folder or use Netlify CLI
+- **GitHub Pages**: Push the `dist/` folder to `gh-pages` branch
+- **AWS S3**: Upload the `dist/` folder to an S3 bucket configured for static hosting
+- **nginx/Apache**: Serve the `dist/` directory as the web root
+
+**Important**: Ensure your hosting service is configured to handle client-side routing by redirecting all routes to `index.html`.
+
 ## Testing
 
 This project uses **Vitest** and **React Testing Library** for comprehensive component testing.
@@ -97,16 +142,6 @@ pnpm test:coverage
 - Integration tests for complex component behavior
 - Mocked dependencies (@dnd-kit, stores, hooks, router)
 - Accessibility testing with semantic queries
-
-## Code Quality Improvements
-
-Recent refactoring included:
-
-- ✅ Eliminated badge variant logic duplication across components
-- ✅ Fixed filter dropdown bug (now shows all assignees/severities, not just filtered ones)
-- ✅ Removed duplicate status label mappings
-- ✅ Added proper async persistence for drag & drop operations with error handling
-- ✅ Improved code maintainability and reduced ~60 lines of redundant code
 
 ## Configuration
 
