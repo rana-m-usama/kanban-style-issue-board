@@ -1,122 +1,77 @@
 # Kanban Style Issue Board
 
-A React + TypeScript + Vite application for managing issues in a kanban-style board.
+A React + TypeScript kanban board application for managing issues with drag-and-drop functionality, priority sorting, and role-based access control.
 
-## Package Manager Configuration
+## Features
 
-This project uses **pnpm** as the package manager with strict engine version enforcement.
+- **Drag & Drop**: Move issues between Backlog, In Progress, and Done columns
+- **Optimistic Updates**: Instant UI feedback with undo capability (5-second window)
+- **Smart Sorting**: Issues automatically sorted by priority score (severity × 10 + days since creation × -1 + user rank)
+- **Search & Filter**: Real-time search by title/tags, filter by assignee and severity
+- **Recently Accessed**: Sidebar tracking last 5 visited issues (stored in localStorage)
+- **Role-Based Permissions**: Admin users can modify issues, contributors have read-only access
+- **Real-Time Polling**: Auto-refresh every 10 seconds with last sync time display
+- **Issue Detail Page**: View full issue information with "Mark as Resolved" action
+
+## Tech Stack
+
+- **React 19** + **TypeScript** 
+- **Vite** for build tooling
+- **Zustand** for state management
+- **@dnd-kit** for drag-and-drop
+- **React Router** for routing
+- **SCSS Modules** for styling
+
+## Getting Started
 
 ### Prerequisites
 
 - **Node.js**: Version 24.11.1 or higher (specified in `.nvmrc`)
-- **pnpm**: If not installed, run `npm install -g pnpm`
+- **pnpm**: Package manager
 
-### Getting Started
+### Installation
 
-1. **Install pnpm** (if not already installed):
+1. Install pnpm (if not already installed):
    ```bash
    npm install -g pnpm
    ```
 
-2. **Use the correct Node version** (if using nvm):
+2. Use the correct Node version (if using nvm):
    ```bash
    nvm use
    ```
 
-3. **Install dependencies**:
+3. Install dependencies:
    ```bash
    pnpm install
    ```
 
-4. **Start development server**:
+4. Start development server:
    ```bash
    pnpm dev
    ```
 
-### Configuration Files
+5. Open your browser at `http://localhost:5173`
 
-- **`.nvmrc`**: Specifies Node.js version 24.11.1 for team consistency
-- **`.npmrc`**: Contains `engine-strict=true` for strict version enforcement
-- **`pnpm-workspace.yaml`**: Workspace configuration for pnpm
-- **`package.json`**: Includes `engines` field requiring Node >=24.11.1
+## Available Scripts
 
-### Why pnpm?
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
 
-- Faster installation and better disk usage
-- Content-addressable storage prevents duplication
-- Better monorepo support for future expansion
-- Strict dependency management
+## Code Quality Improvements
 
-## React + TypeScript + Vite Setup
+Recent refactoring included:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- ✅ Eliminated badge variant logic duplication across components
+- ✅ Fixed filter dropdown bug (now shows all assignees/severities, not just filtered ones)
+- ✅ Removed duplicate status label mappings
+- ✅ Added proper async persistence for drag & drop operations with error handling
+- ✅ Improved code maintainability and reduced ~60 lines of redundant code
 
-Currently, two official plugins are available:
+## Configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `.nvmrc` - Node.js version specification
+- `.npmrc` - pnpm configuration with strict engine enforcement
+- `pnpm-workspace.yaml` - Workspace configuration
