@@ -1,13 +1,8 @@
+import { AppRouter } from './AppRouter';
+import './styles/globals.scss';
 
 function App() {
-
-  return (
-    <>
-      <div> 
-        Kanband Issue Board 
-      </div>
-    </>
-  )
+  return <AppRouter />;
 }
 
-export default App
+export default App;
