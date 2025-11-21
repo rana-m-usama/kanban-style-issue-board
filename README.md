@@ -59,6 +59,44 @@ A React + TypeScript kanban board application for managing issues with drag-and-
 - `pnpm build` - Build for production
 - `pnpm preview` - Preview production build
 - `pnpm lint` - Run ESLint
+- `pnpm test` - Run test suite
+- `pnpm test:ui` - Run tests with UI
+- `pnpm test:coverage` - Run tests with coverage report
+
+## Testing
+
+This project uses **Vitest** and **React Testing Library** for comprehensive component testing.
+
+### Test Coverage
+
+The test suite includes:
+
+- **Common Components**: Button, Badge, Input, Select, Toast
+- **Board Components**: Board, Column, IssueCard
+- **Layout Components**: Layout, Navigation
+
+### Running Tests
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Run tests with UI interface
+pnpm test:ui
+
+# Generate coverage report
+pnpm test:coverage
+```
+
+### Test Structure
+
+- Unit tests for component rendering and user interactions
+- Integration tests for complex component behavior
+- Mocked dependencies (@dnd-kit, stores, hooks, router)
+- Accessibility testing with semantic queries
 
 ## Code Quality Improvements
 
