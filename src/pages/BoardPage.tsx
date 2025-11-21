@@ -30,9 +30,21 @@ export const BoardPage: React.FC = () => {
             <button 
               className={styles.sidebar__clear}
               onClick={clearRecentIssues}
-              aria-label="Delete recent issues"
+              aria-label="Clear recent issues"
+              title="Clear all"
             >
-              Delete
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  d="M6.5 1.5V2.5H2.5V4H3.5V13C3.5 13.8284 4.17157 14.5 5 14.5H11C11.8284 14.5 12.5 13.8284 12.5 13V4H13.5V2.5H9.5V1.5H6.5ZM5 4H11V13H5V4ZM6.5 6V11.5H8V6H6.5ZM9.5 6V11.5H11V6H9.5Z" 
+                  fill="currentColor"
+                />
+              </svg>
             </button>
           </div>
           

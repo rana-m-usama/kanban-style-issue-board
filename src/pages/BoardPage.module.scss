@@ -15,7 +15,7 @@
   }
   
   .sidebar {
-    width: 300px;
+    width: 240px;
     background: $card-bg;
     border-radius: $border-radius;
     padding: $spacing-md;
@@ -44,12 +44,17 @@
     
     &__clear {
       @include reset-button;
-      font-size: $font-size-sm;
+      font-size: 16px;
       color: $danger-color;
-      padding: $spacing-xs $spacing-sm;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid $danger-color;
       border-radius: $border-radius-sm;
       transition: $transition-base;
+      line-height: 1;
       
       &:hover {
         background-color: $danger-color;
